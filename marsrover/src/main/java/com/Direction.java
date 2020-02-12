@@ -1,32 +1,36 @@
 package com;
 
-public abstract class Direction implements TurnDirection{
-  private final char direction;
+public abstract class Direction implements TurnDirection {
+    private final char direction;
 
-  public Direction(char direction) {
-    this.direction = direction;
-  }
+    public Direction(char direction) {
+        this.direction = direction;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    public char getDirection() {
+        return direction;
+    }
 
-    Direction direction1 = (Direction) o;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-    if (direction != direction1.direction) return false;
+        Direction direction1 = (Direction) o;
 
-    return true;
-  }
+        if (direction != direction1.direction) return false;
 
-  @Override
-  public int hashCode() {
-    return (int) direction;
-  }
+        return true;
+    }
 
-  @Override
-  public String toString() {
-    return "Direction{direction=" + direction + '}';
-  }
+    @Override
+    public int hashCode() {
+        return (int) direction;
+    }
+
+    @Override
+    public String toString() {
+        return "Direction{direction=" + direction + '}';
+    }
 
 }
